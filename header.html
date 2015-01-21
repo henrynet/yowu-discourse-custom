@@ -4,80 +4,88 @@ jQuery(document).ready(function($) {
     // and other libraries also using $ will not be accessible under this shortcut
 
 
-     /* menu trigger */
-     $('.btn-menu-trigger').click(function(e){
-          e.preventDefault();
-          e.stopPropagation();
-          $('body').toggleClass('menu-on');
-     });
-     $(document).on('click', '.menu-on #header, .menu-on #main', function(e){
-          e.preventDefault();
-          e.stopPropagation();
-          $('body').removeClass('menu-on');
-     });
-    
-     $('.sidebar-menu').on({'mousewheel': function(e) {
-              e.stopPropagation();
-          }
-     })
-    
-     /* sub-menu dropdown */
-     $('.menu .menu-item-has-children > a').append('<i class="fa fa-plus"></i>');
-     $('.menu').on('click','.menu-item-has-children > a', function(e){
-          e.preventDefault();
-          $(this).siblings('.sub-menu').slideToggle();
-          if($(this).children('i').hasClass('fa-plus')){
-               $(this).children('i').removeClass('fa-plus').addClass('fa-minus');
-          }
-          else{
-               $(this).children('i').removeClass('fa-minus').addClass('fa-plus');
-          }
-     });
-     /* loggedin user menu */
-     $('.loggedin-user-area').click(function(){
-          $(this).children('.user-menu').slideToggle(200);
-     });
+    /* menu trigger */
+    $('.btn-menu-trigger').click(function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $('body').toggleClass('menu-on');
+    });
+    $(document).on('click', '.menu-on #header, .menu-on #main', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $('body').removeClass('menu-on');
+    });
 
-     /* search field btn */
-     $('.searchform-submit').click(function(e){
-          if(!$('.search-form').hasClass('input-on')){
-               e.preventDefault();
-               $('.search-form').addClass('input-on');
-               $('.search-field').focus();    
-          }
-     });
-     $('.searchinput-close').click(function(e){
-          e.preventDefault();
-          $('.search-field').val('');
-          $('.search-form').removeClass('input-on');
-     });
+    $('.sidebar-menu').on({
+        'mousewheel': function(e) {
+            e.stopPropagation();
+        }
+    })
 
-     /* effects related to images need to be bind in window.load */
-     $(window).load(function(){
+    /* sub-menu dropdown */
+    $('.menu .menu-item-has-children > a').append('<i class="fa fa-plus"></i>');
+    $('.menu').on('click', '.menu-item-has-children > a', function(e) {
+        e.preventDefault();
+        $(this).siblings('.sub-menu').slideToggle();
+        if ($(this).children('i').hasClass('fa-plus')) {
+            $(this).children('i').removeClass('fa-plus').addClass('fa-minus');
+        } else {
+            $(this).children('i').removeClass('fa-minus').addClass('fa-plus');
+        }
+    });
+    /* loggedin user menu */
+    $('.loggedin-user-area').click(function() {
+        $(this).children('.user-menu').slideToggle(200);
+    });
 
-     });
+    /* search field btn */
+    $('.searchform-submit').click(function(e) {
+        if (!$('.search-form').hasClass('input-on')) {
+            e.preventDefault();
+            $('.search-form').addClass('input-on');
+            $('.search-field').focus();
+        }
+    });
+    $('.searchinput-close').click(function(e) {
+        e.preventDefault();
+        $('.search-field').val('');
+        $('.search-form').removeClass('input-on');
+    });
+
+    /* effects related to images need to be bind in window.load */
+    $(window).load(function() {
+
+    });
 
 });
 </script>
 
 <section id="menu">
     <div class="sidebar-menu">
-         <div class="menu-main-menu-container">
-             <ul id="menu-main-menu" class="menu">
-                 <li id="menu-item-49" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-49"><a href="#">團隊</a></li>
-                <li id="menu-item-50" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50"><a href="#">有物專家</a></li>
+        <div class="menu-main-menu-container">
+            <ul id="menu-main-menu" class="menu">
+                <li id="menu-item-49" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-49"><a href="#">團隊</a>
+                </li>
                 <li id="menu-item-51" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-51"><a href="#">最新</a>
                     <ul class="sub-menu">
-                         <li id="menu-item-52" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-52"><a href="http://yowureport.prototype-hacker.com/category/talent/">人才</a></li>
-                         <li id="menu-item-53" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-53"><a href="http://yowureport.prototype-hacker.com/category/startup/">創業</a></li>
-                         <li id="menu-item-54" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54"><a href="http://yowureport.prototype-hacker.com/category/culture/">文化</a></li>
-                         <li id="menu-item-55" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-55"><a href="http://yowureport.prototype-hacker.com/category/technology/">科技</a></li>
-                         <li id="menu-item-56" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56"><a href="http://yowureport.prototype-hacker.com/category/strategy/">策略</a></li>
-                         <li id="menu-item-57" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-57"><a href="http://yowureport.prototype-hacker.com/category/finance/">財經</a></li>
+                        <li id="menu-item-52" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-52"><a href="http://yowureport.prototype-hacker.com/category/talent/">人才</a>
+                        </li>
+                        <li id="menu-item-53" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-53"><a href="http://yowureport.prototype-hacker.com/category/startup/">創業</a>
+                        </li>
+                        <li id="menu-item-54" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54"><a href="http://yowureport.prototype-hacker.com/category/culture/">文化</a>
+                        </li>
+                        <li id="menu-item-55" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-55"><a href="http://yowureport.prototype-hacker.com/category/technology/">科技</a>
+                        </li>
+                        <li id="menu-item-56" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56"><a href="http://yowureport.prototype-hacker.com/category/strategy/">策略</a>
+                        </li>
+                        <li id="menu-item-57" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-57"><a href="http://yowureport.prototype-hacker.com/category/finance/">財經</a>
+                        </li>
                     </ul>
                 </li>
-                <li id="menu-item-84" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-84"><a href="http://yowureport.prototype-hacker.com/events/">活動</a></li>
-                <li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59"><a href="http://yowureport.prototype-hacker.com/author/">作者</a></li>
+                <li id="menu-item-84" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-84"><a href="http://yowureport.prototype-hacker.com/events/">活動</a>
+                </li>
+                <li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59"><a href="http://yowureport.prototype-hacker.com/author/">作者</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -85,16 +93,16 @@ jQuery(document).ready(function($) {
 
 <section id="header">
     <div class="container">
-         <div class="row">
-              <div class="header-left col-md-5">
-                   <a class="btn-menu-trigger"><i class="fa fa-bars"></i></a>
-                   <h1 class="logo-h1">
+        <div class="row">
+            <div class="header-left col-md-5">
+                <a class="btn-menu-trigger"><i class="fa fa-bars"></i></a>
+                <h1 class="logo-h1">
                         <a href="http://yowu20test.cloudns.pro/">
                              <img class="logo" src="http://yowureport.prototype-hacker.com/wp-content/themes/yowureport/css/img/yowu-logo.png" alt="yowureport logo" id="exifviewer-img-1" width="200">
                         </a>                                       
                    </h1>
-              </div>
-              <!--
+            </div>
+            <!--
               <div class="header-right col-md-7">
                    <form role="search" method="get" class="search-form" action="http://yowureport.prototype-hacker.com/">
                      <input type="search" class="search-field" value="" name="s">
@@ -104,9 +112,9 @@ jQuery(document).ready(function($) {
                 <a class="btn btn-login" href="http://yowureport.prototype-hacker.com/my-account/">登入</a>
               </div>
               -->
-         </div>
-     </div>
-     <!--
+        </div>
+    </div>
+    <!--
     <div class="container">
         <a href="http://yowu20test.cloudns.pro/">
             <img src="http://yowureport.com/wp-content/uploads/2014/01/logo14.png" width="200" />
