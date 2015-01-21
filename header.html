@@ -6,21 +6,15 @@ jQuery(document).ready(function($) {
 
     /* menu trigger */
     $('.btn-menu-trigger').click(function(e) {
-        e.preventDefault();
         e.stopPropagation();
         $('body').toggleClass('menu-on');
     });
     $(document).on('click', '.menu-on #header, .menu-on #main', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
         $('body').removeClass('menu-on');
     });
-
-    $('.sidebar-menu').on({
-        'mousewheel': function(e) {
-            e.stopPropagation();
-        }
-    })
+    $(document).ajaxSend( function() {
+        $('body').removeClass('menu-on');
+    });
 
     /* sub-menu dropdown */
     $('.menu .menu-item-has-children > a').append('<i class="fa fa-plus"></i>');
