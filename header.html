@@ -1,4 +1,14 @@
 <script>
+(function(history){
+    var pushState = history.pushState;
+    history.pushState = function(state) {
+        if (typeof history.onpushstate == "function") {
+            history.onpushstate({state: state});
+        }
+        return pushState.apply(history, arguments);
+    }
+})(window.history);
+
 jQuery(document).ready(function($) {
     // Inside of this function, $() will work as an alias for jQuery()
     // and other libraries also using $ will not be accessible under this shortcut
@@ -12,9 +22,9 @@ jQuery(document).ready(function($) {
     $(document).on('click', '.menu-on #header, .menu-on #main', function(e) {
         $('body').removeClass('menu-on');
     });
-    $(document).ajaxSend( function() {
+    window.onpopstate = history.onpushstate = function() {
         $('body').removeClass('menu-on');
-    });
+    };
 
     /* sub-menu dropdown */
     $('.menu .menu-item-has-children > a').append('<i class="fa fa-plus"></i>');
@@ -94,7 +104,7 @@ jQuery(document).ready(function($) {
                 <a class="btn-menu-trigger"><i class="fa fa-bars"></i></a>
                 <h1 class="logo-h1">
                         <a href="http://yowu20test.cloudns.pro/">
-                             <img class="logo" src="http://discourse.cloudns.club/uploads/default/31/13ac82ea0107dcdc.png" alt="yowureport logo" id="exifviewer-img-1" width="200">
+                             <img class="logo" src="http://discourse.cloudns.club/uploads/default/31/13ac82ea0107dcdc.png" alt="yowureport logo" id="exifviewer-img-1">
                         </a>                                       
                    </h1>
             </div>
