@@ -1,0 +1,15 @@
+<script>
+jQuery(document).ready(function($) {
+    // Inside of this function, $() will work as an alias for jQuery()
+    // and other libraries also using $ will not be accessible under this shortcut
+
+    $("#m-header").prependTo( $(".d-header .title") ).addClass("m-show");
+});
+</script>
+
+<span id="m-header">
+    <a href="//yowureport.prototype-hacker.com" class="m-hlink">
+        <img class="m-hlogo" src="http://yowureport.com/wp-content/uploads/2014/01/yowu-120820-01-favicon.jpeg">
+    </a>
+    <span class="m-harrow">&raquo;</span>
+</span>
