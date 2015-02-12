@@ -38,9 +38,183 @@ img.avatar {
 	height: 30px;
 }
 #footer {
+    box-sizing: border-box;
+    /*height: 130px;*/
+    
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
     background-color: #1e1e1e;
-    padding: 15px 0 10px 15px;
+    /*padding: 30px 0;*/
+    
+    padding: 30px 0 16px 0;
+    display: block;
+    position: relative;
+    top: 30px;
 }
-#footer .footer-logo img {
+/*
+*   footer section
+*/
+/* line 295, yowureport/sass/_layout.scss */
+#footer .container {
+    height: auto !important;
+}
+#footer {
+    height: 80px;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    background-color: #1e1e1e;
+    padding: 15px 0;
+}
+@media screen and (max-width: 767px) {
+    /* line 295, yowureport/sass/_layout.scss */
+    
+    #footer {
+        height: auto;
+    }
+}
+/* line 303, yowureport/sass/_layout.scss */
+
+#footer .footer-left {
+    padding-top: 5px;
+}
+@media screen and (min-width: 992px) {
+    .col-md-4 {
+        width: 33.33333333%;
+    }
+    .col-md-8 {
+        width: 66.66666667%;
+    }
+    .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+        float: left;
+    }
+}
+@media screen and (max-width: 767px) {
+    /* line 303, yowureport/sass/_layout.scss */
+    
+    #footer .footer-left {
+        text-align: center;
+    }
+}
+/* line 308, yowureport/sass/_layout.scss */
+
+#footer .footer-left .footer-logo {
+    margin-bottom: 5px;
+}
+/* line 310, yowureport/sass/_layout.scss */
+
+#footer .footer-left .footer-logo img {
     width: 160px;
+}
+/* line 314, yowureport/sass/_layout.scss */
+
+#footer .footer-left .copyright {
+    color: #999999;
+    font-size: 14px;
+}
+/* line 319, yowureport/sass/_layout.scss */
+
+#footer .footer-right {
+    text-align: right;
+}
+@media screen and (max-width: 992px) {
+    /* line 319, yowureport/sass/_layout.scss */
+    
+    #footer .footer-right {
+        text-align: left;
+    }
+}
+@media screen and (max-width: 767px) {
+    /* line 319, yowureport/sass/_layout.scss */
+    
+    #footer .footer-right {
+        text-align: center;
+        padding-top: 0px;
+    }
+}
+/* line 328, yowureport/sass/_layout.scss */
+
+#footer .footer-right .footer-menu {
+    display: inline-block;
+}
+/* line 330, yowureport/sass/_layout.scss */
+
+#footer .footer-right .footer-menu #menu-footer-menu {
+    margin-bottom: 0px;
+    padding-left: 0px;
+    list-style: none;
+}
+@media screen and (max-width: 992px) {
+    /* line 330, yowureport/sass/_layout.scss */
+    
+    #footer .footer-right .footer-menu #menu-footer-menu {
+        margin-bottom: 0px;
+    }
+}
+/* line 337, yowureport/sass/_layout.scss */
+
+#footer .footer-right .footer-menu #menu-footer-menu li {
+    display: inline-block;
+    padding: 15px 0;
+}
+@media screen and (max-width: 992px) {
+    /* line 337, yowureport/sass/_layout.scss */
+    
+    #footer .footer-right .footer-menu #menu-footer-menu li {
+        padding: 0;
+    }
+}
+/* line 343, yowureport/sass/_layout.scss */
+
+#footer .footer-right .footer-menu #menu-footer-menu li a {
+    line-height: 30px;
+    color: #999999;
+    font-size: 15px;
+    letter-spacing: 3px;
+    padding: 0 20px;
+    border-right: 1px solid #999999;
+}
+/* line 350, yowureport/sass/_layout.scss */
+
+#footer .footer-right .footer-menu #menu-footer-menu li a:hover {
+    color: #f9f9f9;
+}
+@media screen and (max-width: 992px) {
+    /* line 343, yowureport/sass/_layout.scss */
+    
+    #footer .footer-right .footer-menu #menu-footer-menu li a {
+        padding: 0px 10px;
+    }
+}
+/* line 358, yowureport/sass/_layout.scss */
+
+#footer .footer-right .footer-menu #menu-footer-menu li:last-child a {
+    border-right: 0px;
+}
+/* line 365, yowureport/sass/_layout.scss */
+
+#footer .footer-right .social-links {
+    display: inline-block;
+}
+/* line 367, yowureport/sass/_layout.scss */
+
+#footer .footer-right .social-links a {
+    line-height: 30px;
+    display: inline-block;
+    padding: 0 10px;
+}
+/* line 372, yowureport/sass/_layout.scss */
+
+#footer .footer-right .social-links a:hover i {
+    color: #f9f9f9;
+}
+/* line 376, yowureport/sass/_layout.scss */
+
+#footer .footer-right .social-links a i {
+    color: #999999;
+    font-size: 23px;
+    vertical-align: middle;
 }

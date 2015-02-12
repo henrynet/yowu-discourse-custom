@@ -144,6 +144,8 @@ function custom_wp_avatar_refresh() {
 				$avatar_url = curl_get_avatar_url( $avatar_url );
 			}
 			refresh_discourse_avatar( $avatar_user, $avatar_url );
+
+			// redirect back to referer
 			if ( wp_get_referer() ) {
 				wp_safe_redirect( wp_get_referer() );
 			}
