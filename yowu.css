@@ -100,6 +100,11 @@ body {
 #header h1.logo-h1 {
     display: inline-block;
 }
+#header .header-left .header-banner {
+    display: inline-block;
+    width: 360px;
+    margin-left: 15px;
+}
 #main {
     /*padding-bottom: 30px;*/
     margin-top: 80px;
